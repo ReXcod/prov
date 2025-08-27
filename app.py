@@ -2,8 +2,8 @@ import streamlit as st
 from supabase import create_client, Client
 
 # --- Supabase Configuration ---
-SUPABASE_URL = "YOUR_SUPABASE_URL"
-SUPABASE_KEY = "YOUR_SUPABASE_ANON_KEY"
+SUPABASE_URL = "https://vzdbyhrvjmoxicbuoqqq.supabase.co"
+SUPABASE_KEY = "sb_publishable_YfQLA5GZ1qPPqLcH1ACcTg_Wf-kHrcJ"
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
