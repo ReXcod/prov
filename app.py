@@ -14,7 +14,7 @@ st.set_page_config(layout="wide")
 # --- Improved Header Section with Columns and Emojis ---
 header_col1, header_col2 = st.columns([0.8, 0.2])
 with header_col1:
-    st.title("Integrated Surveillance Intelligence System (Providence) ")
+    st.title("Integrated Surveillance Intelligence System (ISIS)")
     st.subheader("Real-time Event Dashboard")
 with header_col2:
     st.image("https://upload.wikimedia.org/wikipedia/commons/e/e0/Wp-surveillance-camera.png") # Placeholder image
