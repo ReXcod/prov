@@ -2,8 +2,8 @@ import streamlit as st
 from supabase import create_client, Client
 
 # --- Supabase Configuration ---
-SUPABASE_URL = "https://vzdbyhrvjmoxicbuoqqq.supabase.co"
-SUPABASE_KEY = "sb_publishable_YfQLA5GZ1qPPqLcH1ACcTg_Wf-kHrcJ"
+SUPABASE_URL = "YOUR_SUPABASE_URL"
+SUPABASE_KEY = "YOUR_SUPABASE_ANON_KEY"
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
@@ -19,12 +19,12 @@ with header_col1:
 with header_col2:
     st.image("https://upload.wikimedia.org/wikipedia/commons/e/e0/Wp-surveillance-camera.png") # Placeholder image
 
-# --- Data Fetching Function (Cached for Performance) ---
+# --- Data Fetching Function (Optimized) ---
 @st.cache_data
 def fetch_events():
-    """Fetches all events and their linked data from Supabase."""
+    """Fetches a limited number of events for better performance."""
     try:
-        response = supabase.from_("events").select("*, cameras(name), people(name)").order("event_time", desc=True).limit(200).execute()
+        response = supabase.from_("events").select("*, cameras(name), people(name)").order("event_time", desc=True).limit(10).execute() # LIMIT is added here
         
         events_data = []
         if response.data:
